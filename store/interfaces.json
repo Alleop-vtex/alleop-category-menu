@@ -1,58 +1,58 @@
 {
-  "menu-link": {
+  "alleop-category-menu-link": {
     "component": "index"
   },
-  "menu": {
+  "alleop-category-menu": {
     "component": "Menu",
     "composition": "children",
     "content": {
       "$ref": "app:alleop.alleop-category-menu#/definitions/Menu"
     }
   },
-  "menu-item": {
+  "alleop-category-menu-item": {
     "component": "MenuItem",
     "composition": "children",
-    "allowed": ["submenu"],
+    "allowed": ["alleop-category-submenu"],
     "content": {
       "$ref": "app:alleop.alleop-category-menu#/definitions/MenuItem"
     }
   },
-  "submenu": {
+  "alleop-category-submenu": {
     "component": "Submenu",
     "composition": "children",
     "content": {
       "$ref": "app:alleop.alleop-category-menu#/definitions/Submenu"
     }
   },
-  "submenu.accordion": {
+  "alleop-category-submenu.accordion": {
     "component": "SubmenuAccordion",
     "composition": "children"
   },
-  "submenu-col": {
+  "alleop-category-submenu-col": {
     "component": "Column",
     "composition": "children"
   },
-  "unstable--menu": {
+  "alleop-category-unstable--menu": {
     "component": "Menu",
     "composition": "children"
   },
-  "unstable--menu-item": {
+  "alleop-category-unstable--menu-item": {
     "component": "MenuItem",
-    "allowed": ["unstable--submenu"]
+    "allowed": ["alleop-category-unstable--submenu"]
   },
-  "unstable--submenu": {
+  "alleop-category-unstable--submenu": {
     "component": "Submenu",
     "composition": "children"
   },
-  "unstable--col": {
+  "alleop-category-unstable--col": {
     "component": "Column",
     "composition": "children"
   },
-  "unstable--second-level-menu": {
+  "alleop-category-unstable--second-level-menu": {
     "component": "Menu",
     "composition": "children"
   },
-  "unstable--second-level-menu-item": {
+  "alleop-category-unstable--second-level-menu-item": {
     "component": "MenuItem"
   }
 }
