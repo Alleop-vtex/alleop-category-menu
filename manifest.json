@@ -1,0 +1,22 @@
+{
+  "name": "alleop-category-menu",
+  "vendor": "alleop",
+  "version": "2.29.0",
+  "title": "Alleop Category Menu",
+  "description": "A Menu Component",
+  "mustUpdateAt": "2019-04-03",
+  "builders": {
+    "react": "3.x",
+    "messages": "1.x",
+    "store": "0.x",
+    "docs": "0.x"
+  },
+  "dependencies": {
+    "vtex.store-components": "3.x",
+    "vtex.store-graphql": "2.x",
+    "vtex.native-types": "0.x",
+    "vtex.store-icons": "0.x",
+    "vtex.css-handles": "1.x"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
