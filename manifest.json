@@ -1,7 +1,7 @@
 {
   "name": "alleop-category-menu",
   "vendor": "alleop",
-  "version": "2.29.0",
+  "version": "2.29.1-beta.0",
   "title": "Alleop Category Menu",
   "description": "A Menu Component",
   "mustUpdateAt": "2019-04-03",
