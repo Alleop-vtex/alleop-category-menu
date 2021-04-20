@@ -3,7 +3,7 @@ import { Query } from 'react-apollo'
 
 import categoryWithChildren from '../graphql/categoryWithChildren.graphql'
 import StyledLink from './StyledLink'
-
+import DrawerMenuItem from './DrawerMenuItem'
 const CategoryLink: FunctionComponent<CategoryLinkProps> = ({
   href,
   titleTag,
@@ -17,31 +17,40 @@ const CategoryLink: FunctionComponent<CategoryLinkProps> = ({
   )
 }
 
-const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({
-  categoryId,
-}: CategoryMenuProps) => {
-  if (categoryId == null) {
-    return null
-  }
+const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProps) => {
   return (
-    <Query query={categoryWithChildren} variables={{ id: categoryId }}>
+    <Query query={categoryWithChildren}>
       {({ data, loading, error }: any) => {
         if (error || loading) {
           // TODO add loader and error message
           return null
         }
 
-        const {
-          category,
-          category: { children },
-        }: { category: Category } = data
+        const {categories}: {categories: any[]} = data
         return (
           <>
-            <CategoryLink {...category} isTitle />
-            {children?.map((child: Category) => (
-              <li key={child.id}>
-                <CategoryLink {...child} />
-              </li>
+            {categories.map((category: Category) => (
+              <>
+              {category.hasChildren ?
+                <DrawerMenuItem key={category.id} category={category} >
+                  {category.children?.map((child: Category) => (
+                    <>
+                      {child.hasChildren ? 
+                        <DrawerMenuItem key={child.id} category={child}>
+                          {child.children?.map((child2: Category) => (
+                            <CategoryLink key={child2.id} {...child2}/>
+                          ))}
+                        </DrawerMenuItem>
+                      : 
+                        <CategoryLink key={child.id} {...child}/>
+                      }
+                    </>
+                  ))}
+                  </DrawerMenuItem>
+                  :
+                    <CategoryLink key={category.id} {...category}/>
+                  }
+                </>
             ))}
           </>
         )
@@ -51,15 +60,16 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({
 }
 
 interface CategoryMenuProps {
-  categoryId: number
   customText?: string
 }
+
 
 interface Category {
   id: number
   titleTag: string
   href: string
   name: string
+  hasChildren: boolean
   children: Category[]
 }
 

@@ -4796,6 +4796,10 @@ verror@1.10.0:
   version "3.134.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-components@3.134.0/public/@types/vtex.store-components#1a4d5aae8c23c0fb98fabd259b4c0c3c2ba44ba8"
 
+"vtex.store-drawer@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-drawer@0.15.1/public/@types/vtex.store-drawer":
+  version "0.15.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-drawer@0.15.1/public/@types/vtex.store-drawer#df09e9d84c341f44d23474a95fdb13c95988d745"
+
 "vtex.store-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-graphql@2.136.8/public/@types/vtex.store-graphql":
   version "2.136.8"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-graphql@2.136.8/public/@types/vtex.store-graphql#3444a0c80789556d92e118c62bbf8d1afffbd9f9"
@@ -4803,6 +4807,10 @@ verror@1.10.0:
 "vtex.store-icons@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-icons@0.18.0/public/@types/vtex.store-icons":
   version "0.18.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-icons@0.18.0/public/@types/vtex.store-icons#0ee94d549aa283ce3a13ab987c13eac4fdfd1bba"
+
+"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.138.2/public/@types/vtex.styleguide":
+  version "9.138.2"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.138.2/public/@types/vtex.styleguide#8cb6b8e7f06d1a2357f3fe117708fa03188267ea"
 
 w3c-hr-time@^1.0.1:
   version "1.0.2"

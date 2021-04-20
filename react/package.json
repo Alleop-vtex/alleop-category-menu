@@ -4,9 +4,8 @@
   "description": "A Menu Component.",
   "scripts": {
     "pretest": "yarn",
-    "test": "vtex-test-tools test",
-    "test:watch": "vtex-test-tools test --watch",
-    "lint": "tsc --noEmit --pretty && tslint -c tslint.json './**/*.ts'"
+    "lint": "eslint --ext ts,tsx .",
+    "lint:fix": "eslint --ext ts,tsx . --fix"
   },
   "author": "VTEX",
   "license": "ISC",
@@ -32,6 +31,8 @@
     "apollo-client": "^2.6.8",
     "history": "^5.0.0",
     "typescript": "3.9.7",
+    "vtex.store-drawer": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-drawer@0.15.1/public/@types/vtex.store-drawer",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.138.2/public/@types/vtex.styleguide",
     "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@1.0.0/public/@types/vtex.css-handles",
     "vtex.native-types": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.native-types@0.7.4/public/@types/vtex.native-types",
     "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.4/public/@types/vtex.render-runtime",

@@ -5,7 +5,6 @@ import { CssHandlesTypes, useCssHandles } from 'vtex.css-handles'
 import { useRuntime } from 'vtex.render-runtime'
 
 import CategoryMenu from './components/CategoryMenu'
-import Item from './components/Item'
 import LevelContext from './components/LevelContext'
 import MenuContext from './components/MenuContext'
 import MenuItem, { MenuItemSchema } from './MenuItem'
@@ -88,8 +87,7 @@ const Menu: StorefrontFunctionComponent<MenuSchema> = ({
               'flex-row': orientation === 'horizontal',
             })}
           >
-            {!categoryId && title && <Item {...title} isTitle />}
-            {categoryId && <CategoryMenu categoryId={categoryId} />}
+            <CategoryMenu />
             {children}
             {menuItems}
           </ul>

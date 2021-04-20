@@ -6,7 +6,7 @@
     "component": "Menu",
     "composition": "children",
     "content": {
-      "$ref": "app:alleop.alleop-category-menu#/definitions/Menu"
+      "$ref": "app:alleop.alleop-category-menu#/definitions/AlleopMenu"
     }
   },
   "alleop-category-menu-item": {
@@ -14,14 +14,14 @@
     "composition": "children",
     "allowed": ["alleop-category-submenu"],
     "content": {
-      "$ref": "app:alleop.alleop-category-menu#/definitions/MenuItem"
+      "$ref": "app:alleop.alleop-category-menu#/definitions/AlleopMenuItem"
     }
   },
   "alleop-category-submenu": {
-    "component": "Submenu",
+    "component": "AlleopSubmenu",
     "composition": "children",
     "content": {
-      "$ref": "app:alleop.alleop-category-menu#/definitions/Submenu"
+      "$ref": "app:alleop.alleop-category-menu#/definitions/AlleopSubmenu"
     }
   },
   "alleop-category-submenu.accordion": {

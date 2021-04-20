@@ -3,7 +3,7 @@
   "vendor": "alleop",
   "version": "2.29.2-beta.0",
   "title": "Alleop Category Menu",
-  "description": "A Menu Component",
+  "description": "A Alleop Menu Component",
   "mustUpdateAt": "2019-04-03",
   "builders": {
     "react": "3.x",
@@ -14,8 +14,10 @@
   "dependencies": {
     "vtex.store-components": "3.x",
     "vtex.store-graphql": "2.x",
+    "vtex.store-drawer": "0.x",
     "vtex.native-types": "0.x",
     "vtex.store-icons": "0.x",
+    "vtex.styleguide": "9.x",
     "vtex.css-handles": "1.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"

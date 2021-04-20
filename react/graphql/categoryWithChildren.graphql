@@ -1,15 +1,25 @@
-query categoryWithChildren($id: Int) {
-  category(id: $id) {
-    cacheId
+query {
+  categories(treeLevel: 2) {
     id
-    href
     name
-    titleTag
+    text: name
+    href
+    slug
+    hasChildren
     children {
       id
-      href
       name
-      titleTag
+      text: name
+      href
+      slug
+      hasChildren
+      children {
+        id
+        name
+        text: name
+        href
+        slug
+      }
     }
   }
 }

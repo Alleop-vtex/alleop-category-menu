@@ -1,6 +1,6 @@
 {
   "definitions": {
-    "Menu": {
+    "AlleopMenu": {
       "type": "object",
       "dependencies": {
         "additionalDef": {
@@ -26,7 +26,7 @@
                   ]
                 },
                 "title": {
-                  "$ref": "app:alleop.alleop-category-menu#/definitions/MenuItem"
+                  "$ref": "app:alleop.alleop-category-menu#/definitions/AlleopMenuItem"
                 }
               }
             },
@@ -103,12 +103,12 @@
           "type": "array",
           "title": "Menu Items",
           "items": {
-            "$ref": "app:alleop.alleop-category-menu#/definitions/MenuItem"
+            "$ref": "app:alleop.alleop-category-menu#/definitions/AlleopMenuItem"
           }
         }
       }
     },
-    "MenuItem": {
+    "AlleopMenuItem": {
       "dependencies": {
         "type": {
           "oneOf": [
@@ -203,7 +203,7 @@
         }
       }
     },
-    "Submenu": {
+    "AlleopSubmenu": {
       "type": "object",
       "properties": {
         "submenuWidth": {
