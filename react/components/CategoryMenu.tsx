@@ -32,11 +32,11 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
             {categories.map((category: Category) => (
               <>
               {category.hasChildren ?
-                <DrawerMenuItem key={category.id} category={category} >
+                <DrawerMenuItem key={category.id} category={category} backdropMode='visible' >
                   {category.children?.map((child: Category) => (
                     <>
                       {child.hasChildren ? 
-                        <DrawerMenuItem key={child.id} category={child}>
+                        <DrawerMenuItem key={child.id} category={child} backdropMode='invisible'>
                           {child.children?.map((child2: Category) => (
                             <CategoryLink key={child2.id} {...child2}/>
                           ))}

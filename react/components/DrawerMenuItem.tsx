@@ -8,10 +8,11 @@ import {Link} from 'vtex.styleguide'
 
 const CSS_HANDLES = ['categoryName', 'categoryNameContainer', 'categoryExplorerHeader', 'categoryExplorerHeaderContainer', 'exploreAll', 'categoryChildContainer'] as const
 
-const DrawerMenuItem: FunctionComponent<DrawerMenuItemProps> = ({category, children}) => {
+const DrawerMenuItem: FunctionComponent<DrawerMenuItemProps> = ({category, children, backdropMode = 'visible'}) => {
   const { handles, withModifiers } = useCssHandles(CSS_HANDLES)
   return (
    <Drawer
+      backdropMode = {backdropMode}
       position="left"
       maxWidth="360"
       header={
@@ -56,7 +57,8 @@ interface Category {
 }
 
 interface DrawerMenuItemProps {
-  category: Category
+  category: Category,
+  backdropMode: string
 }
 
 export default DrawerMenuItem
