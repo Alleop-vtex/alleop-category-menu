@@ -17,6 +17,13 @@
       "$ref": "app:alleop.alleop-category-menu#/definitions/AlleopMenuItem"
     }
   },
+  "alleop-drop-dawn-menu":{
+    "component": "MenuDropDawn",
+    "composition": "children",
+    "content": {
+      "$ref":"app:alleop.alleop-category-menu#/definitions/AlleopDropDawnMenu"
+    }
+  },
   "alleop-category-submenu": {
     "component": "AlleopSubmenu",
     "composition": "children",
