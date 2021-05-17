@@ -215,6 +215,9 @@
           "default": "auto"
         }
       }
+    },
+    "AlleopDropDawnMenu":{
+      "type":"object"
     }
   }
 }
