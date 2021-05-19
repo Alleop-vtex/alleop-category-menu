@@ -151,8 +151,6 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                             </div>
                         </div>
                         <div className={`${handles.handles.topCategoryWrapper}`}>
-
-                        </div>
                             <div className={`${handles.handles.topCategory}`}>Top categories</div>
                             <div className={`${handles.handles.topCategories}`}>
                                 <CategoryLink id={13} href="/уреди-за-кухнята" name="Уреди за кухнята" children={[]} hasChildren={false} titleTag="Уреди за кухнята"/>
@@ -161,6 +159,7 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                             <div onClick={()=> setOpen(true)} className={`${handles.handles.allCategoriesTitle}`}>
                                 See All Categories
                             </div>
+                        </div>
                     </div>
                     
                 )
