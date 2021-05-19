@@ -90,7 +90,11 @@ const CSS_HANDLES = [
     'subCategoryLink',
     'backBtn',
     'allCategoriesText',
-    'categoriesTitle'
+    'categoriesTitle',
+    'allCategoriesTitle',
+    'topCategory',
+    'topCategoryWrapper'
+
 ] as const
 
 
@@ -146,14 +150,17 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                                 <Link to={'/'} className={`${handles.handles.link}`}  > Моите списъци </Link>
                             </div>
                         </div>
-                        <div>Top categories</div>
-                        <div className={`${handles.handles.topCategories}`}>
-                            <CategoryLink id={13} href="/уреди-за-кухнята" name="Уреди за кухнята" children={[]} hasChildren={false} titleTag="Уреди за кухнята"/>
-                            <CategoryLink id={12} href="/уреди-за-дома" name="Уреди за дома" children={[]} hasChildren={false} titleTag="Уреди за дома"/>
+                        <div className={`${handles.handles.topCategoryWrapper}`}>
+
                         </div>
-                        <div onClick={()=> setOpen(true)}>
-                            See All Categories
-                        </div>
+                            <div className={`${handles.handles.topCategory}`}>Top categories</div>
+                            <div className={`${handles.handles.topCategories}`}>
+                                <CategoryLink id={13} href="/уреди-за-кухнята" name="Уреди за кухнята" children={[]} hasChildren={false} titleTag="Уреди за кухнята"/>
+                                <CategoryLink id={12} href="/уреди-за-дома" name="Уреди за дома" children={[]} hasChildren={false} titleTag="Уреди за дома"/>
+                            </div>
+                            <div onClick={()=> setOpen(true)} className={`${handles.handles.allCategoriesTitle}`}>
+                                See All Categories
+                            </div>
                     </div>
                     
                 )
