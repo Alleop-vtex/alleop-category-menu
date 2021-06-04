@@ -21,7 +21,7 @@
     "component": "MenuMobile",
     "composition": "children",
     "content": {
-      "$ref":"app:alleop.alleop-category-menu#/definitions/AlleopDropDawnMenu"
+      "$ref":"app:alleop.alleop-category-menu#/definitions/AlleopMenuMobile"
     }
   },
   "alleop-category-submenu": {
