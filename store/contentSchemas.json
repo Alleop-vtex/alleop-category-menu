@@ -216,7 +216,7 @@
         }
       }
     },
-    "AlleopDropDawnMenu":{
+    "AlleopMenuMobile":{
       "type":"object"
     }
   }

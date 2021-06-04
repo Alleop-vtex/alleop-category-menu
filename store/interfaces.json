@@ -17,8 +17,8 @@
       "$ref": "app:alleop.alleop-category-menu#/definitions/AlleopMenuItem"
     }
   },
-  "alleop-drop-dawn-menu":{
-    "component": "MenuDropDawn",
+  "alleop-menu-mobile":{
+    "component": "MenuMobile",
     "composition": "children",
     "content": {
       "$ref":"app:alleop.alleop-category-menu#/definitions/AlleopDropDawnMenu"
