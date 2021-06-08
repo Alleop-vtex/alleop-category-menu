@@ -5,7 +5,7 @@ import categoryWithChildren from './graphql/categoryWithChildren.graphql'
 import StyledLink from './components/StyledLink'
 import { useCssHandles } from 'vtex.css-handles'
 import { Link } from 'vtex.render-runtime'
-
+import CATEGORIES from './definedCategories'
 
 interface State{
     history: Array<Category[]>
@@ -116,12 +116,12 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
 
     return (
         <Query query={categoryWithChildren}>
-            {({ data, loading, error }: any) => {
+            {({  loading, error }: any) => {
                 if (error || loading) {
                 // TODO add loader and error message
                 return null
             }
-            const {categories}: {categories: any[]} = data
+            const {categories}: {categories: any[]} = CATEGORIES
             if(state.history.length === 0){
                 dispatch({type: 'INIT_HISTORY', args:{initialHistory: categories}})
             }

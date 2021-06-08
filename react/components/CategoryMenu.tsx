@@ -4,6 +4,7 @@ import { Query } from 'react-apollo'
 import categoryWithChildren from '../graphql/categoryWithChildren.graphql'
 import StyledLink from './StyledLink'
 import DrawerMenuItem from './DrawerMenuItem'
+import CATEGORIES from '../definedCategories'
 const CategoryLink: FunctionComponent<CategoryLinkProps> = ({
   href,
   titleTag,
@@ -20,13 +21,13 @@ const CategoryLink: FunctionComponent<CategoryLinkProps> = ({
 const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProps) => {
   return (
     <Query query={categoryWithChildren}>
-      {({ data, loading, error }: any) => {
+      {({ loading, error }: any) => {
         if (error || loading) {
           // TODO add loader and error message
           return null
         }
 
-        const {categories}: {categories: any[]} = data
+        const {categories}: {categories: any[]} = CATEGORIES
         return (
           <>
             {categories.map((category: Category) => (
