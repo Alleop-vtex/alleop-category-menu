@@ -153,8 +153,8 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                         <div className={`${handles.handles.topCategoryWrapper}`}>
                             <div className={`${handles.handles.topCategory}`}>Top categories</div>
                             <div className={`${handles.handles.topCategories}`}>
-                                <CategoryLink id={13} href="/уреди-за-кухнята" name="Уреди за кухнята" children={[]} hasChildren={false} titleTag="Уреди за кухнята"/>
-                                <CategoryLink id={12} href="/уреди-за-дома" name="Уреди за дома" children={[]} hasChildren={false} titleTag="Уреди за дома"/>
+                                <CategoryLink id={13} href="/uredi-za-kuhnyata-c13" name="Уреди за кухнята" children={[]} hasChildren={false} titleTag="Уреди за кухнята"/>
+                                <CategoryLink id={12} href="/uredi-za-doma-c12" name="Уреди за дома" children={[]} hasChildren={false} titleTag="Уреди за дома"/>
                             </div>
                             <div onClick={()=> setOpen(true)} className={`${handles.handles.allCategoriesTitle}`}>
                                 See All Categories
