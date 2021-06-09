@@ -133,7 +133,7 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIcon}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'/'}> Home </Link>
+                                <Link className={`${handles.handles.link}`} to={'/'}> Начало </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIcon}`}>
@@ -152,13 +152,13 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                             </div>
                         </div>
                         <div className={`${handles.handles.topCategoryWrapper}`}>
-                            <div className={`${handles.handles.topCategory}`}>Top categories</div>
+                            <div className={`${handles.handles.topCategory}`}>Топ категории</div>
                             <div className={`${handles.handles.topCategories}`}>
                                 <CategoryLink id={13} href="/uredi-za-kuhnyata-c13" name="Уреди за кухнята" children={[]} hasChildren={false} titleTag="Уреди за кухнята"/>
                                 <CategoryLink id={12} href="/uredi-za-doma-c12" name="Уреди за дома" children={[]} hasChildren={false} titleTag="Уреди за дома"/>
                             </div>
                             <div onClick={()=> {setOpen(true); document.body.style.overflow = 'hidden'}} className={`${handles.handles.allCategoriesTitle}`}>
-                                See All Categories
+                                Виж всички категории
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                     </div>
                     {state.history.length === 1 ? 
                         <div className={`${handles.handles.allCategoriesText}`}>
-                            All categories
+                            Всички категории
                         </div>
                         :
                         null
@@ -193,7 +193,7 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                                     </Link>
                                 </div>
                                 <div className={`${handles.handles.categoriesTitle}`}>
-                                    Categories
+                                    Категории
                                 </div>
                             </>
                             :
