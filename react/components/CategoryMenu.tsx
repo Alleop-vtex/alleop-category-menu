@@ -7,6 +7,8 @@ import { useCssHandles } from 'vtex.css-handles'
 import { Link } from 'vtex.render-runtime'
 import CATEGORIES from '../definedCategories'
 
+
+
 interface State{
     history: Array<Category[]>
     parentCategoryHistory: Category[]
@@ -50,6 +52,16 @@ const reducer = (state : State, action: ReducerActions) => {
     }
 }
 
+// const icons = {
+//     673 : "../icons/1-tv&audio.svg", //TV & Audio
+//     678 : "../icons/2-big-appliances.svg", // Големи електроуреди , big_appliences
+//     12: "../icons/3-home-appliances.svg", // Home appliences
+//     13: "../icons/4-kitchen-appliances.svg", // Kitchen
+//     16: "../icons/5-cookware-and-accesories.svg", // cookware
+//     17: "../icons/6-home-bath-garden.svg", // Home
+//     20: "../icons/7-personal-care.svg", //Personal Care
+// }
+
 interface Category {
     id: number
     titleTag: string
@@ -57,6 +69,7 @@ interface Category {
     name: string
     hasChildren: boolean
     children: Category[]
+    iconPath ?: string
 }
 interface CategoryMenuProps {
     customText?: string
@@ -93,8 +106,16 @@ const CSS_HANDLES = [
     'categoriesTitleDesktop',
     'allCategoriesTitleDesktop',
     'topCategoryDesktop',
-    'topCategoryWrapperDesktop'
-
+    'topCategoryWrapperDesktop',
+    'categoryItemWrapperDesktop',
+    'icon673',
+    'icon678',
+    'icon12',
+    'icon13',
+    'icon16',
+    'icon17',
+    'icon20',
+    'iconDefault'
 ] as const
 
 
@@ -144,7 +165,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                     {
                         state.history.length !== 1 ?
                         <div onClick={() => backBtnHandler()} className={`${handles.handles.backBtnDesktop}`}>
-                            Go Back
+                            Обратно
                         </div>
                         :
                         null
@@ -170,7 +191,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                                         to={`${state.parentCategoryHistory[state.parentCategoryHistory.length - 1].href}`}
                                         className={`${handles.handles.exploreAllLinkDesktop}`}
                                     >
-                                        Explore all
+                                        Виж всички
                                     </Link>
                                 </div>
                                 <div className={`${handles.handles.categoriesTitleDesktop}`}>
@@ -185,13 +206,26 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                         {state.history[state.history.length - 1].map((category : Category )=> {
                             if(category.hasChildren){
                                 return(
-                                    <div onClick={()=> goToSubCategoryList(category)} className={`${handles.handles.subCategoryLinkDesktop}`}>
-                                        {category.name}
+                                    <div className={`${handles.handles.categoryItemWrapperDesktop}`}>
+                                        <div className={`${category.id == 673 ? handles.handles.icon673 
+                                            : category.id == 678 ? handles.handles.icon678
+                                            : category.id == 12 ? handles.handles.icon12 
+                                            : category.id == 13 ? handles.handles.icon13
+                                            : category.id == 16 ? handles.handles.icon16
+                                            : category.id == 17 ? handles.handles.icon17
+                                            : category.id == 20 ? handles.handles.icon20
+                                            : handles.handles.iconDefault
+                                            }`}></div>
+                                        <div onClick={()=> goToSubCategoryList(category)} className={`${handles.handles.subCategoryLinkDesktop}`}>
+                                            {category.name}
+                                        </div>
                                     </div>
                                 )
                             }else{
                                 return(
-                                    <CategoryLink key={category.id} {...category}/>
+                                    <div className={`${handles.handles.categoryItemWrapperDesktop}`}>
+                                        <CategoryLink key={category.id} {...category}/>
+                                    </div>
                                 )
                             }
                         }  

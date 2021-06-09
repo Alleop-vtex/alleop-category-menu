@@ -4,6 +4,7 @@ const CATEGORIES ={ categories : [{
     "text": "Уреди за дома",
     "href": "/uredi-za-doma-c12",
     "slug": "уреди-за-дома",
+    "iconPath": "../icons/3-home-appliances.svg",
     "hasChildren": true,
     "children": [{
         "id": 1233,
@@ -285,6 +286,7 @@ const CATEGORIES ={ categories : [{
     "href": "/uredi-za-kuhnyata-c13",
     "slug": "уреди-за-кухнята",
     "hasChildren": true,
+    "iconPath": "../icons/4-kitchen-appliances.svg",
     "children": [{
         "id": 1318,
         "name": "За готвене",
@@ -600,6 +602,7 @@ const CATEGORIES ={ categories : [{
     "href": "/kuhnenski-sadove-c16",
     "slug": "съдове-и-аксесоари",
     "hasChildren": true,
+    "iconPath": "../icons/5-cookware-and-accesories.svg",
     "children": [{
         "id": 1663,
         "name": "Ножове и аксесоари",
@@ -878,6 +881,7 @@ const CATEGORIES ={ categories : [{
     "href": "/dom-banya-i-gradina-c17",
     "slug": "дом--баня-и-градина",
     "hasChildren": true,
+    "iconPath": "../icons/6-home-bath-garden.svg",
     "children": [{
         "id": 1762,
         "name": "Смесители и нагреватели за вода",
@@ -1178,6 +1182,7 @@ const CATEGORIES ={ categories : [{
     "href": "/lichna-grija-i-krasota-c20",
     "slug": "лична-грижа-и-красота",
     "hasChildren": true,
+    "iconPath": "../icons/7-personal-care.svg",
     "children": [{
         "id": 20211,
         "name": "Грижа за тялото",
@@ -1415,6 +1420,7 @@ const CATEGORIES ={ categories : [{
     "text": "Големи електроуреди",
     "href": "/golemi-elektrouredi-c678",
     "slug": "големи-електроуреди",
+    "iconPath": "../icons/2-big-appliances.svg",
     "hasChildren": true,
     "children": [{
         "id": 278678,
@@ -1591,6 +1597,7 @@ const CATEGORIES ={ categories : [{
         "__typename": "Category"
     }],
     "__typename": "Category"
-}]}
+}
+]}
 
 export default CATEGORIES

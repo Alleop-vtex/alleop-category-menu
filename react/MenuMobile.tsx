@@ -168,7 +168,7 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
             return(
                 <div className={`${handles.handles.categoryMenuWrapper}`}>
                     <div onClick={() => backBtnHandler()} className={`${handles.handles.backBtn}`}>
-                        Go Back
+                        Обратно
                     </div>
                     {state.history.length === 1 ? 
                         <div className={`${handles.handles.allCategoriesText}`}>
@@ -189,7 +189,7 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                                         to={`${state.parentCategoryHistory[state.parentCategoryHistory.length - 1].href}`}
                                         className={`${handles.handles.exploreAllLink}`}
                                     >
-                                        Explore all
+                                        Виж всички
                                     </Link>
                                 </div>
                                 <div className={`${handles.handles.categoriesTitle}`}>
