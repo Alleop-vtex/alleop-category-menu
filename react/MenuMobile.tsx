@@ -109,6 +109,7 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
     const backBtnHandler = () => {
         if(state.history.length === 1){
             setOpen(false)
+            document.body.style.overflow = 'auto'
         }else{
             dispatch({type: 'REMOVE_SNAP'})
         }
@@ -156,7 +157,7 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                                 <CategoryLink id={13} href="/uredi-za-kuhnyata-c13" name="Уреди за кухнята" children={[]} hasChildren={false} titleTag="Уреди за кухнята"/>
                                 <CategoryLink id={12} href="/uredi-za-doma-c12" name="Уреди за дома" children={[]} hasChildren={false} titleTag="Уреди за дома"/>
                             </div>
-                            <div onClick={()=> setOpen(true)} className={`${handles.handles.allCategoriesTitle}`}>
+                            <div onClick={()=> {setOpen(true); document.body.style.overflow = 'hidden'}} className={`${handles.handles.allCategoriesTitle}`}>
                                 See All Categories
                             </div>
                         </div>
