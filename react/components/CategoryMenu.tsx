@@ -115,7 +115,14 @@ const CSS_HANDLES = [
     'icon16',
     'icon17',
     'icon20',
-    'iconDefault'
+    'iconDefault',
+    'linksSection',
+    'linkContainer',
+    'categoriesLinkProfile',
+    'categoriesLinkOrders',
+    'categoriesLinkWishlist',
+    'categoriesLinkHelp',
+
 ] as const
 
 
@@ -204,6 +211,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                         } 
 
                         {state.history[state.history.length - 1].map((category : Category )=> {
+                            console.log(state.history.length)
                             if(category.hasChildren){
                                 return(
                                     <div className={`${handles.handles.categoryItemWrapperDesktop}`}>
@@ -214,6 +222,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                                             : category.id == 16 ? handles.handles.icon16
                                             : category.id == 17 ? handles.handles.icon17
                                             : category.id == 20 ? handles.handles.icon20
+                                            : state.history.length !== 1 ? ''
                                             : handles.handles.iconDefault
                                             }`}></div>
                                         <div onClick={()=> goToSubCategoryList(category)} className={`${handles.handles.subCategoryLinkDesktop}`}>
@@ -230,6 +239,24 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                             }
                         }  
                         )}
+                        {state.history.length == 1 ?
+                            <div className={`${handles.handles.linksSectionDesktop}`}>
+                                <div className={`${handles.handles.linkContainer}`} >
+                                    <Link className={`${handles.handles.categoriesLinkProfile}`} to={'https://alleop.myvtex.com/account?__bindingAddress=alleop.bg/#/profile'}  > Моят профил </Link>
+                                </div>
+                                <div className={`${handles.handles.linkContainer}`} >
+                                    <Link className={`${handles.handles.categoriesLinkOrders}`} to={'https://alleop.myvtex.com/account?__bindingAddress=alleop.bg/#/orders'}  > Моите поръчки </Link>
+                                </div>
+                                <div className={`${handles.handles.linkContainer}`} >
+                                    <Link to={'/'} className={`${handles.handles.categoriesLinkWishlist}`}  > Моите списъци </Link>
+                                </div>
+                                <div className={`${handles.handles.linkContainer}`}>
+                                    <Link to={'https://help.alleop.bg/'} className={`${handles.handles.categoriesLinkHelp}`}>Помощен център</Link>
+                                </div>
+                            </div>
+                            :
+                            null
+                        }
                     </div>
                 </div>
             )
