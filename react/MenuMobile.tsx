@@ -51,9 +51,9 @@ const reducer = (state : State, action: ReducerActions) => {
 }
 
 interface Category {
-    id: number
+    id: number | string
     titleTag: string
-    href: string
+    href: string | undefined
     name: string
     hasChildren: boolean
     children: Category[]
@@ -96,7 +96,25 @@ const CSS_HANDLES = [
     'topCategoryWrapper'
 
 ] as const
+function changeURL(categories : Category[], URL: ({
+    id: string;
+    url: string;
+} | {
+    id: string;
+    url?: undefined;
+})[] ){
+    for(let item of categories){
+        let obj = URL.find(el => el.id == item.id.toString())
+        if(obj){
+            item.href = obj.url
+        }
 
+        if(item.children){
+            changeURL(item.children, URL)
+        }
+    }
+    return categories
+}
 
 
 const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProps) => {
@@ -117,14 +135,15 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
 
     return (
         <Query query={categoryWithChildren}>
-            {({  loading, error }: any) => {
+            {({data, loading, error }: any) => {
                 if (error || loading) {
                 // TODO add loader and error message
                 return null
             }
-            const {categories}: {categories: any[]} = CATEGORIES
+            const {categories}: {categories: any[]} = data
+            const changedUrlCategories = changeURL(categories, CATEGORIES )
             if(state.history.length === 0){
-                dispatch({type: 'INIT_HISTORY', args:{initialHistory: categories}})
+                dispatch({type: 'INIT_HISTORY', args:{initialHistory: changedUrlCategories}})
             }
             if(!isOpen){
                 return(

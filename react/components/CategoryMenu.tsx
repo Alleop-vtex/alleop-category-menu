@@ -5,7 +5,7 @@ import categoryWithChildren from '../graphql/categoryWithChildren.graphql'
 import StyledLink from '../components/StyledLink'
 import { useCssHandles } from 'vtex.css-handles'
 import { Link } from 'vtex.render-runtime'
-import CATEGORIES from '../definedCategories'
+// import CATEGORIES from '../definedCategories'
 
 
 
@@ -145,12 +145,13 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
 
     return (
         <Query query={categoryWithChildren}>
-            {({  loading, error }: any) => {
+            {({ data, loading, error }: any) => {
                 if (error || loading) {
                 // TODO add loader and error message
                 return null
             }
-            const {categories}: {categories: any[]} = CATEGORIES
+            console.log(data)
+            const {categories}: {categories: any[]} = data
             if(state.history.length === 0){
                 dispatch({type: 'INIT_HISTORY', args:{initialHistory: categories}})
             }
