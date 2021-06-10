@@ -5,9 +5,27 @@ import categoryWithChildren from '../graphql/categoryWithChildren.graphql'
 import StyledLink from '../components/StyledLink'
 import { useCssHandles } from 'vtex.css-handles'
 import { Link } from 'vtex.render-runtime'
-// import CATEGORIES from '../definedCategories'
+import CATEGORIES from '../definedCategories'
 
+function changeURL(categories : Category[], URL: ({
+    id: string;
+    url: string;
+} | {
+    id: string;
+    url?: undefined;
+})[] ){
+    for(let item of categories){
+        let obj = URL.find(el => el.id == item.id.toString())
+        if(obj){
+            item.href = obj.url
+        }
 
+        if(item.children){
+            changeURL(item.children, URL)
+        }
+    }
+    return categories
+}
 
 interface State{
     history: Array<Category[]>
@@ -65,7 +83,7 @@ const reducer = (state : State, action: ReducerActions) => {
 interface Category {
     id: number
     titleTag: string
-    href: string
+    href: string | undefined
     name: string
     hasChildren: boolean
     children: Category[]
@@ -152,6 +170,8 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
             }
             console.log(data)
             const {categories}: {categories: any[]} = data
+            const changedUrlCategories = changeURL(categories, CATEGORIES )
+            console.log(changedUrlCategories)
             if(state.history.length === 0){
                 dispatch({type: 'INIT_HISTORY', args:{initialHistory: categories}})
             }
