@@ -263,13 +263,13 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                         {state.history.length == 1 ?
                             <div className={`${handles.handles.linksSectionDesktop}`}>
                                 <div className={`${handles.handles.linkContainer}`} >
-                                    <Link className={`${handles.handles.categoriesLinkProfile}`} to={'https://alleop.myvtex.com/account?__bindingAddress=alleop.bg/#/profile'}  > Моят профил </Link>
+                                    <Link className={`${handles.handles.categoriesLinkProfile}`} to={'https://www.alleop.bg/account#/profile'}  > Моят профил </Link>
                                 </div>
                                 <div className={`${handles.handles.linkContainer}`} >
-                                    <Link className={`${handles.handles.categoriesLinkOrders}`} to={'https://alleop.myvtex.com/account?__bindingAddress=alleop.bg/#/orders'}  > Моите поръчки </Link>
+                                    <Link className={`${handles.handles.categoriesLinkOrders}`} to={'https://www.alleop.bg/account#/orders'}  > Моите поръчки </Link>
                                 </div>
                                 <div className={`${handles.handles.linkContainer}`} >
-                                    <Link to={'/'} className={`${handles.handles.categoriesLinkWishlist}`}  > Моите списъци </Link>
+                                    <Link to={'https://www.alleop.bg/account#/wishlist'} className={`${handles.handles.categoriesLinkWishlist}`}  > Моите списъци </Link>
                                 </div>
                                 <div className={`${handles.handles.linkContainer}`}>
                                     <Link to={'https://help.alleop.bg/'} className={`${handles.handles.categoriesLinkHelp}`}>Помощен център</Link>

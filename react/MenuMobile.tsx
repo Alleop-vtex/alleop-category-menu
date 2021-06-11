@@ -93,7 +93,11 @@ const CSS_HANDLES = [
     'categoriesTitle',
     'allCategoriesTitle',
     'topCategory',
-    'topCategoryWrapper'
+    'topCategoryWrapper',
+    'linkIconHome',
+    'linkIconProfileMobile',
+    'linkIconOrdersMobile',
+    'linkIconWishlistMobile'
 
 ] as const
 function changeURL(categories : Category[], URL: ({
@@ -150,24 +154,24 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                     <div>
                         <div className={`${handles.handles.linksSection}`}>
                             <div className={`${handles.handles.linkContainer}`} >
-                                <div className={`${handles.handles.linkIcon}`}>
+                                <div className={`${handles.handles.linkIconHome}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'/'}> Начало </Link>
+                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/'}> Начало </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
-                                <div className={`${handles.handles.linkIcon}`}>
+                                <div className={`${handles.handles.linkIconProfileMobile}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'https://alleop.myvtex.com/account?__bindingAddress=alleop.bg/#/profile'}  > Моят профил </Link>
+                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/account#/profile'}  > Моят профил </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
-                                <div className={`${handles.handles.linkIcon}`}>
+                                <div className={`${handles.handles.linkIconOrdersMobile}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'https://alleop.myvtex.com/account?__bindingAddress=alleop.bg/#/orders'}  > Моите поръчки </Link>
+                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/account#/orders'}  > Моите поръчки </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
-                                <div className={`${handles.handles.linkIcon}`}>
+                                <div className={`${handles.handles.linkIconWishlistMobile}`}>
                                 </div>
-                                <Link to={'/'} className={`${handles.handles.link}`}  > Моите списъци </Link>
+                                <Link to={'https://www.alleop.bg/account#/wishlist'} className={`${handles.handles.link}`}  > Моите списъци </Link>
                             </div>
                         </div>
                         <div className={`${handles.handles.topCategoryWrapper}`}>
