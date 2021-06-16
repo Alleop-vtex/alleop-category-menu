@@ -126,12 +126,13 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
     const [isOpen, setOpen] = useState(false)
     const [state, dispatch] = useReducer(reducer, initialState)
     const goToSubCategoryList = (category : Category ) =>{
+        
         dispatch({type: 'ADD_SNAP', args: {snap: category.children, category: category}})
     }
     const backBtnHandler = () => {
         if(state.history.length === 1){
             setOpen(false)
-            document.body.style.overflow = 'auto'
+            // document.body.style.overflow = 'auto'
         }else{
             dispatch({type: 'REMOVE_SNAP'})
         }

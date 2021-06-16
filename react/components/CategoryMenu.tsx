@@ -70,15 +70,6 @@ const reducer = (state : State, action: ReducerActions) => {
     }
 }
 
-// const icons = {
-//     673 : "../icons/1-tv&audio.svg", //TV & Audio
-//     678 : "../icons/2-big-appliances.svg", // Големи електроуреди , big_appliences
-//     12: "../icons/3-home-appliances.svg", // Home appliences
-//     13: "../icons/4-kitchen-appliances.svg", // Kitchen
-//     16: "../icons/5-cookware-and-accesories.svg", // cookware
-//     17: "../icons/6-home-bath-garden.svg", // Home
-//     20: "../icons/7-personal-care.svg", //Personal Care
-// }
 
 interface Category {
     id: number
