@@ -159,10 +159,8 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                 // TODO add loader and error message
                 return null
             }
-            console.log(data)
             const {categories}: {categories: any[]} = data
             const changedUrlCategories = changeURL(categories, CATEGORIES )
-            console.log(changedUrlCategories)
             if(state.history.length === 0){
                 dispatch({type: 'INIT_HISTORY', args:{initialHistory: categories}})
             }
@@ -223,7 +221,6 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                         } 
 
                         {state.history[state.history.length - 1].map((category : Category )=> {
-                            console.log(state.history.length)
                             if(category.hasChildren){
                                 return(
                                     <div className={`${handles.handles.categoryItemWrapperDesktop}`}>
