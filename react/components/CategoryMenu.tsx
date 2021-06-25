@@ -162,7 +162,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
             const {categories}: {categories: any[]} = data
             const changedUrlCategories = changeURL(categories, CATEGORIES )
             if(state.history.length === 0){
-                dispatch({type: 'INIT_HISTORY', args:{initialHistory: categories}})
+                dispatch({type: 'INIT_HISTORY', args:{initialHistory: changedUrlCategories}})
             }
             if(!isOpen){
                 return(
@@ -223,7 +223,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                         {state.history[state.history.length - 1].map((category : Category )=> {
                             if(category.hasChildren){
                                 return(
-                                    <div className={`${handles.handles.categoryItemWrapperDesktop}`}>
+                                    <div key={category.id} className={`${handles.handles.categoryItemWrapperDesktop}`}>
                                         <div className={`${category.id == 673 ? handles.handles.icon673 
                                             : category.id == 678 ? handles.handles.icon678
                                             : category.id == 12 ? handles.handles.icon12 
