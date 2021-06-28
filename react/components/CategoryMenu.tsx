@@ -6,6 +6,7 @@ import StyledLink from '../components/StyledLink'
 import { useCssHandles } from 'vtex.css-handles'
 import { Link } from 'vtex.render-runtime'
 import CATEGORIES from '../definedCategories'
+import hiddenCategories from '../hiddenCategoriesId'
 
 function changeURL(categories : Category[], URL: ({
     id: string;
@@ -14,6 +15,7 @@ function changeURL(categories : Category[], URL: ({
     id: string;
     url?: undefined;
 })[] ){
+
     for(let item of categories){
         let obj = URL.find(el => el.id == item.id.toString())
         if(obj){
@@ -22,6 +24,18 @@ function changeURL(categories : Category[], URL: ({
 
         if(item.children){
             changeURL(item.children, URL)
+        }
+    }
+    return categories
+}
+function hideCategories(categories: Category[], ID: Array<String>){
+    for(let item of categories){
+        let obj = ID.find(el => el == item.id.toString())
+        if(obj){
+            item.hidden = true
+        }
+        if(item.hasChildren){
+            hideCategories(item.children, ID)
         }
     }
     return categories
@@ -79,6 +93,7 @@ interface Category {
     hasChildren: boolean
     children: Category[]
     iconPath ?: string
+    hidden ?: boolean
 }
 interface CategoryMenuProps {
     customText?: string
@@ -161,8 +176,9 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
             }
             const {categories}: {categories: any[]} = data
             const changedUrlCategories = changeURL(categories, CATEGORIES )
+            const hiddenPropCategories = hideCategories(changedUrlCategories, hiddenCategories);
             if(state.history.length === 0){
-                dispatch({type: 'INIT_HISTORY', args:{initialHistory: changedUrlCategories}})
+                dispatch({type: 'INIT_HISTORY', args:{initialHistory: hiddenPropCategories}})
             }
             if(!isOpen){
                 return(
@@ -221,7 +237,9 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                         } 
 
                         {state.history[state.history.length - 1].map((category : Category )=> {
-                            if(category.hasChildren){
+                            if(category.hidden){
+                                return null
+                            }else if(category.hasChildren){
                                 return(
                                     <div key={category.id} className={`${handles.handles.categoryItemWrapperDesktop}`}>
                                         <div className={`${category.id == 673 ? handles.handles.icon673 
