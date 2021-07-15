@@ -24,6 +24,13 @@
       "$ref":"app:alleop.alleop-category-menu#/definitions/AlleopMenuMobile"
     }
   },
+  "alleop-logout-button":{
+    "component": "Logout",
+    "composition": "children",
+    "content":{
+      "$ref":"app:alleop.alleop-category-menu#/definitions/AlleopLogout"
+    }
+  },
   "alleop-category-submenu": {
     "component": "AlleopSubmenu",
     "composition": "children",
