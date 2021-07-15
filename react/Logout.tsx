@@ -15,7 +15,7 @@ const Logout:FC = () => {
                 {({action : logout}: any) => (
                     <div className={handles.handles.logoutWrapper}>
                         <div onClick={logout} className={handles.handles.logout}>
-                            Logout
+                        Изход
                         </div>
                     </div>
                 )}
