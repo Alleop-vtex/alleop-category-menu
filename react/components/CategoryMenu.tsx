@@ -6,6 +6,7 @@ import StyledLink from '../components/StyledLink'
 import { useCssHandles } from 'vtex.css-handles'
 import { Link } from 'vtex.render-runtime'
 import CATEGORIES from '../definedCategories'
+import CATEGORIESRO from '../definedCategoriesRO'
 import hiddenCategories from '../hiddenCategoriesId'
 
 function changeURL(categories : Category[], URL: ({
@@ -166,6 +167,8 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
             dispatch({type: 'REMOVE_SNAP'})
         }
     }
+    const splittedUrl =  window.location.origin.split(".")
+    const isRoDomain = splittedUrl[splittedUrl.length-1].indexOf("ro") >= 0
 
     return (
         <Query query={categoryWithChildren}>
@@ -175,7 +178,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                 return null
             }
             const {categories}: {categories: any[]} = data
-            const changedUrlCategories = changeURL(categories, CATEGORIES )
+            const changedUrlCategories = changeURL(categories, isRoDomain ? CATEGORIESRO : CATEGORIES )
             const hiddenPropCategories = hideCategories(changedUrlCategories, hiddenCategories);
             if(state.history.length === 0){
                 dispatch({type: 'INIT_HISTORY', args:{initialHistory: hiddenPropCategories}})
