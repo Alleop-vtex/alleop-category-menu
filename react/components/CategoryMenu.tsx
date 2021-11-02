@@ -8,7 +8,7 @@ import { Link } from 'vtex.render-runtime'
 import CATEGORIES from '../definedCategories'
 import CATEGORIESRO from '../definedCategoriesRO'
 import hiddenCategories from '../hiddenCategoriesId'
-
+import { FormattedMessage } from 'react-intl'
 function changeURL(categories : Category[], URL: ({
     id: string;
     url: string;
@@ -272,16 +272,16 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                         {state.history.length == 1 ?
                             <div className={`${handles.handles.linksSectionDesktop}`}>
                                 <div className={`${handles.handles.linkContainer}`} >
-                                    <Link className={`${handles.handles.categoriesLinkProfile}`} to={'https://www.alleop.bg/account#/profile'}  > Моят профил </Link>
+                                    <Link className={`${handles.handles.categoriesLinkProfile}`} to={'https://www.alleop.bg/account#/profile'}  ><FormattedMessage id="store/menu.profile.title"/></Link>
                                 </div>
                                 <div className={`${handles.handles.linkContainer}`} >
-                                    <Link className={`${handles.handles.categoriesLinkOrders}`} to={'https://www.alleop.bg/account#/orders'}  > Моите поръчки </Link>
+                                    <Link className={`${handles.handles.categoriesLinkOrders}`} to={'https://www.alleop.bg/account#/orders'}  ><FormattedMessage id="store/menu.orders.title"/> </Link>
                                 </div>
                                 <div className={`${handles.handles.linkContainer}`} >
-                                    <Link to={'https://www.alleop.bg/account#/wishlist'} className={`${handles.handles.categoriesLinkWishlist}`}  > Моите списъци </Link>
+                                    <Link to={'https://www.alleop.bg/account#/wishlist'} className={`${handles.handles.categoriesLinkWishlist}`}  ><FormattedMessage id="store/menu.wishlist.title"/></Link>
                                 </div>
                                 <div className={`${handles.handles.linkContainer}`}>
-                                    <Link to={'https://help.alleop.bg/'} className={`${handles.handles.categoriesLinkHelp}`}>Помощен център</Link>
+                                    <Link to={'https://help.alleop.bg/'} className={`${handles.handles.categoriesLinkHelp}`}><FormattedMessage id="store/menu.help.title"/></Link>
                                 </div>
                             </div>
                             :

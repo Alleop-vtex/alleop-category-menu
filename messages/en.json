@@ -51,5 +51,9 @@
   "admin/editor.menu.def.none": "None",
   "admin/editor.menu.def.title": "Title",
   "admin/editor.menu.def.category": "Category",
-  "admin/editor.menu.categoryId.title": "Category ID"
+  "admin/editor.menu.categoryId.title": "Category ID",
+  "store/menu.profile.title": "My profile",
+  "store/menu.orders.title": "My orders",
+  "store/menu.wishlist.title": "My wishlist",
+  "store/menu.help.title": "Help"
 }

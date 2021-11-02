@@ -51,5 +51,9 @@
   "admin/editor.menu.def.none": "None value used in radio button",
   "admin/editor.menu.def.title": "Title value used in radio button",
   "admin/editor.menu.def.category": "Category value used in radio button",
-  "admin/editor.menu.categoryId.title": "Category ID title"
+  "admin/editor.menu.categoryId.title": "Category ID title",
+  "store/menu.profile.title": "My profile",
+  "store/menu.orders.title": "My orders",
+  "store/menu.wishlist.title": "My wishlist",
+  "store/menu.help.title": "Help"
 }
