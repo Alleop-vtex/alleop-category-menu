@@ -6,7 +6,7 @@ import StyledLink from '../components/StyledLink'
 import { useCssHandles } from 'vtex.css-handles'
 import { Link } from 'vtex.render-runtime'
 import CATEGORIES from '../definedCategories'
-import CATEGORIESRO from '../definedCategoriesRO'
+// import CATEGORIESRO from '../definedCategoriesRO'
 import hiddenCategories from '../hiddenCategoriesId'
 import { FormattedMessage } from 'react-intl'
 function changeURL(categories : Category[], URL: ({
@@ -178,7 +178,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                 return null
             }
             const {categories}: {categories: any[]} = data
-            const changedUrlCategories = changeURL(categories, isRoDomain ? CATEGORIESRO : CATEGORIES )
+            const changedUrlCategories = changeURL(categories, isRoDomain ? [] : CATEGORIES )
             const hiddenPropCategories = hideCategories(changedUrlCategories, hiddenCategories);
             if(state.history.length === 0){
                 dispatch({type: 'INIT_HISTORY', args:{initialHistory: hiddenPropCategories}})
