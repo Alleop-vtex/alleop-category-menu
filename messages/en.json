@@ -55,5 +55,19 @@
   "store/menu.profile.title": "My profile",
   "store/menu.orders.title": "My orders",
   "store/menu.wishlist.title": "My wishlist",
-  "store/menu.help.title": "Help"
+  "store/menu.help.title": "Help",
+
+  "store/mobile.menu.begin": "Начало",
+  "store/mobile.menu.orders": "Моите поръчки",
+  "store/mobile.menu.wishlist": "Моите списъци",
+  "store/mobile.menu.topCategory": "Топ категории",
+  "store/mobile.menu.allCategory.title": "Виж всички категории",
+  "store/mobile.menu.allCategory.text": "Всички категории",
+  "store/mobile.menu.exploreAll.text": "Виж всички",
+  "store/mobile.menu.category.title": "Категории",
+  "store/mobile.menu.back.title": "Обратно",
+  "store/mobile.menu.myProfile": "Моят профил",
+
+  "store/mobile.menu.category.12.title": "Уреди за дома",
+  "store/mobile.menu.category.13.title": "Уреди за кухнята"
 }

@@ -8,6 +8,7 @@ import { Link } from 'vtex.render-runtime'
 import CATEGORIES from './definedCategories'
 import CATEGORIESRO from './definedCategoriesRO'
 import hiddenCategories from './hiddenCategoriesId'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 interface State{
     history: Array<Category[]>
@@ -140,6 +141,7 @@ function hideCategories(categories: Category[], ID: Array<String>){
 const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProps) => {
     const handles = useCssHandles(CSS_HANDLES)
     const [isOpen, setOpen] = useState(false)
+    const intl = useIntl()
     const [state, dispatch] = useReducer(reducer, initialState)
     const goToSubCategoryList = (category : Category ) =>{
         
@@ -175,32 +177,34 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIconHome}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/'}> Начало </Link>
+                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/'}>
+                                  <FormattedMessage id="store/mobile.menu.begin"/>
+                                    </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIconProfileMobile}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/account#/profile'}  > Моят профил </Link>
+                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/account#/profile'}  > <FormattedMessage id="store/mobile.menu.myProfile"/> </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIconOrdersMobile}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/account#/orders'}  > Моите поръчки </Link>
+                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/account#/orders'}  > <FormattedMessage id="store/mobile.menu.orders"/> </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIconWishlistMobile}`}>
                                 </div>
-                                <Link to={'https://www.alleop.bg/account#/wishlist'} className={`${handles.handles.link}`}  > Моите списъци </Link>
+                                <Link to={'https://www.alleop.bg/account#/wishlist'} className={`${handles.handles.link}`}  > <FormattedMessage id="store/mobile.menu.wishlist"/>  </Link>
                             </div>
                         </div>
                         <div className={`${handles.handles.topCategoryWrapper}`}>
-                            <div className={`${handles.handles.topCategory}`}>Топ категории</div>
+                            <div className={`${handles.handles.topCategory}`}><FormattedMessage id="store/mobile.menu.topCategory"/></div>
                             <div className={`${handles.handles.topCategories}`}>
-                                <CategoryLink id={13} href="/uredi-za-kuhnyata-c13" name="Уреди за кухнята" children={[]} hasChildren={false} titleTag="Уреди за кухнята"/>
-                                <CategoryLink id={12} href="/uredi-za-doma-c12" name="Уреди за дома" children={[]} hasChildren={false} titleTag="Уреди за дома"/>
+                                <CategoryLink id={13} href="/uredi-za-kuhnyata-c13" name={intl.formatMessage({id: 'store/mobile.menu.category.13.title'})} children={[]} hasChildren={false} titleTag={intl.formatMessage({id: 'store/mobile.menu.category.13.title'})}/>
+                                <CategoryLink id={12} href="/uredi-za-doma-c12" name={intl.formatMessage({id: 'store/mobile.menu.category.12.title'})} children={[]} hasChildren={false} titleTag={intl.formatMessage({id: 'store/mobile.menu.category.12.title'})}/>
                             </div>
                             <div onClick={()=> {setOpen(true); document.body.style.overflow = 'hidden'}} className={`${handles.handles.allCategoriesTitle}`}>
-                                Виж всички категории
+                            <FormattedMessage id="store/mobile.menu.allCategory.title"/>
                             </div>
                         </div>
                     </div>
@@ -210,11 +214,12 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
             return(
                 <div className={`${handles.handles.categoryMenuWrapper}`}>
                     <div onClick={() => backBtnHandler()} className={`${handles.handles.backBtn}`}>
-                        Обратно
+                    <FormattedMessage id="store/mobile.menu.back.title"/>
                     </div>
                     {state.history.length === 1 ? 
                         <div className={`${handles.handles.allCategoriesText}`}>
-                            Всички категории
+                          <FormattedMessage id="store/mobile.menu.allCategory.text"/>
+                            
                         </div>
                         :
                         null
@@ -231,11 +236,12 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                                         to={`${state.parentCategoryHistory[state.parentCategoryHistory.length - 1].href}`}
                                         className={`${handles.handles.exploreAllLink}`}
                                     >
-                                        Виж всички
+                                      <FormattedMessage id="store/mobile.menu.exploreAll.text"/>
+                                       
                                     </Link>
                                 </div>
                                 <div className={`${handles.handles.categoriesTitle}`}>
-                                    Категории
+                                <FormattedMessage id="store/mobile.menu.category.title"/>
                                 </div>
                             </>
                             :

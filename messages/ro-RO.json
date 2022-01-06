@@ -47,5 +47,19 @@
   "admin/editor.menu.def.none": "Niciunul",
   "admin/editor.menu.def.title": "Titlu",
   "admin/editor.menu.def.category": "Categorie",
-  "admin/editor.menu.categoryId.title": "ID Categorie"
+  "admin/editor.menu.categoryId.title": "ID Categorie",
+
+  "store/mobile.menu.begin": "Inceput",
+  "store/mobile.menu.orders": "Comenzile mele",
+  "store/mobile.menu.wishlist": "Lista mea de dorinte",
+  "store/mobile.menu.topCategory": "Top categorii",
+  "store/mobile.menu.allCategory.title": "Vezi toate categoriile",
+  "store/mobile.menu.allCategory.text": "Vezi toate",
+  "store/mobile.menu.exploreAll.text": "Vezi toate",
+  "store/mobile.menu.category.title": "Categorii",
+  "store/mobile.menu.back.title": "Inapoi",
+  "store/mobile.menu.myProfile": "Profilul meu",
+
+  "store/mobile.menu.category.12.title": "Electrocasnice",
+  "store/mobile.menu.category.13.title": "Electrocasnice bucatarie"
 }
