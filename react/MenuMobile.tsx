@@ -177,24 +177,24 @@ const MenuDropDawn: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIconHome}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/'}>
+                                <Link className={`${handles.handles.link}`} to={'/'}>
                                   <FormattedMessage id="store/mobile.menu.begin"/>
                                     </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIconProfileMobile}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/account#/profile'}  > <FormattedMessage id="store/mobile.menu.myProfile"/> </Link>
+                                <Link className={`${handles.handles.link}`} to={'/account#/profile'}  > <FormattedMessage id="store/mobile.menu.myProfile"/> </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIconOrdersMobile}`}>
                                 </div>
-                                <Link className={`${handles.handles.link}`} to={'https://www.alleop.bg/account#/orders'}  > <FormattedMessage id="store/mobile.menu.orders"/> </Link>
+                                <Link className={`${handles.handles.link}`} to={'/account#/orders'}  > <FormattedMessage id="store/mobile.menu.orders"/> </Link>
                             </div>
                             <div className={`${handles.handles.linkContainer}`} >
                                 <div className={`${handles.handles.linkIconWishlistMobile}`}>
                                 </div>
-                                <Link to={'https://www.alleop.bg/account#/wishlist'} className={`${handles.handles.link}`}  > <FormattedMessage id="store/mobile.menu.wishlist"/>  </Link>
+                                <Link to={'/account#/wishlist'} className={`${handles.handles.link}`}  > <FormattedMessage id="store/mobile.menu.wishlist"/>  </Link>
                             </div>
                         </div>
                         <div className={`${handles.handles.topCategoryWrapper}`}>

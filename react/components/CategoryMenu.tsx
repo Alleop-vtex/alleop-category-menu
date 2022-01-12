@@ -8,7 +8,7 @@ import { Link } from 'vtex.render-runtime'
 import CATEGORIES from '../definedCategories'
 // import CATEGORIESRO from '../definedCategoriesRO'
 import hiddenCategories from '../hiddenCategoriesId'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, useIntl } from 'react-intl'
 function changeURL(categories : Category[], URL: ({
     id: string;
     url: string;
@@ -156,6 +156,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
     const handles = useCssHandles(CSS_HANDLES)
     const [isOpen, setOpen] = useState(true)
     const [state, dispatch] = useReducer(reducer, initialState)
+    const intl = useIntl()
     const goToSubCategoryList = (category : Category ) =>{
         dispatch({type: 'ADD_SNAP', args: {snap: category.children, category: category}})
     }
@@ -227,11 +228,11 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                                         to={`${state.parentCategoryHistory[state.parentCategoryHistory.length - 1].href}`}
                                         className={`${handles.handles.exploreAllLinkDesktop}`}
                                     >
-                                        Виж всички
+                                      <FormattedMessage id="store/mobile.menu.exploreAll.text"/>
                                     </Link>
                                 </div>
                                 <div className={`${handles.handles.categoriesTitleDesktop}`}>
-                                    Categories
+                                    <FormattedMessage id="store/mobile.menu.category.title"/>
                                 </div>
                             </>
                             :
@@ -272,16 +273,16 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                         {state.history.length == 1 ?
                             <div className={`${handles.handles.linksSectionDesktop}`}>
                                 <div className={`${handles.handles.linkContainer}`} >
-                                    <Link className={`${handles.handles.categoriesLinkProfile}`} to={'https://www.alleop.bg/account#/profile'}  ><FormattedMessage id="store/menu.profile.title"/></Link>
+                                    <Link className={`${handles.handles.categoriesLinkProfile}`} to={'/account#/profile'}  ><FormattedMessage id="store/menu.profile.title"/></Link>
                                 </div>
                                 <div className={`${handles.handles.linkContainer}`} >
-                                    <Link className={`${handles.handles.categoriesLinkOrders}`} to={'https://www.alleop.bg/account#/orders'}  ><FormattedMessage id="store/menu.orders.title"/> </Link>
+                                    <Link className={`${handles.handles.categoriesLinkOrders}`} to={'/account#/orders'}  ><FormattedMessage id="store/menu.orders.title"/> </Link>
                                 </div>
                                 <div className={`${handles.handles.linkContainer}`} >
-                                    <Link to={'https://www.alleop.bg/account#/wishlist'} className={`${handles.handles.categoriesLinkWishlist}`}  ><FormattedMessage id="store/menu.wishlist.title"/></Link>
+                                    <Link to={'/account#/wishlist'} className={`${handles.handles.categoriesLinkWishlist}`}  ><FormattedMessage id="store/menu.wishlist.title"/></Link>
                                 </div>
                                 <div className={`${handles.handles.linkContainer}`}>
-                                    <Link to={'https://help.alleop.bg/'} className={`${handles.handles.categoriesLinkHelp}`}><FormattedMessage id="store/menu.help.title"/></Link>
+                                    <Link to={`https://help.alleop.${intl.locale === 'bg-BG'? 'bg' : 'ro'}/`} className={`${handles.handles.categoriesLinkHelp}`}><FormattedMessage id="store/menu.help.title"/></Link>
                                 </div>
                             </div>
                             :
