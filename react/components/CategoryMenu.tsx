@@ -202,7 +202,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                     {
                         state.history.length !== 1 ?
                         <div onClick={() => backBtnHandler()} className={`${handles.handles.backBtnDesktop}`}>
-                            Обратно
+                            <FormattedMessage id="store/mobile.menu.back.title"/>
                         </div>
                         :
                         null
