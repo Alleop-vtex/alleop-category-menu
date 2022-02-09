@@ -135,6 +135,7 @@ const CSS_HANDLES = [
     'categoryItemWrapperDesktop',
     'icon673',
     'icon678',
+    'icon194',
     'icon12',
     'icon13',
     'icon16',
@@ -248,6 +249,7 @@ const CategoryMenu: FunctionComponent<CategoryMenuProps> = ({}: CategoryMenuProp
                                     <div key={category.id} className={`${handles.handles.categoryItemWrapperDesktop}`}>
                                         <div className={`${category.id == 673 ? handles.handles.icon673 
                                             : category.id == 678 ? handles.handles.icon678
+                                            : category.id == 194 ? handles.handles.icon194
                                             : category.id == 12 ? handles.handles.icon12 
                                             : category.id == 13 ? handles.handles.icon13
                                             : category.id == 16 ? handles.handles.icon16
